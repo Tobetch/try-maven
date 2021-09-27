@@ -51,6 +51,13 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>com.yhayashi30.sample.App</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -68,47 +75,6 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.1.1</version>
-          <configuration>
-            <appendAssemblyId>false</appendAssemblyId>
-            <descriptorRefs>
-              <descriptorRef>jar-with-dependencies</descriptorRef>
-            </descriptorRefs>
-            <archive>
-              <manifest>
-                <mainClass>com.yhayashi30.sample.App</mainClass>
-              </manifest>
-            </archive>
-          </configuration>
-          <executions>
-            <execution>
-              <id>make-assembly</id> 
-              <phase>package</phase> 
-              <goals>
-                <goal>single</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.1.1</version>
-          <executions>
-            <execution>
-              <id>copy-dependencies</id>
-              <phase>package</phase>
-              <goals>
-                <goal>copy-dependencies</goal>
-              </goals>
-              <configuration>
-                <!-- configure the plugin here -->
-              </configuration>
-            </execution>
-          </executions>
         </plugin>
 
       </plugins>
